@@ -50,7 +50,7 @@ func (r *DynamoDBRepository) CreateBuy(buy *domain.Buy) error {
 				N: &points,
 			},
 			"createDate": {
-				S: aws.String(totalAsString),
+				S: aws.String(buy.CreateDate),
 			},
 		},
 	}
