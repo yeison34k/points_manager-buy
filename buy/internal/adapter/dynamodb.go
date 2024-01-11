@@ -26,7 +26,7 @@ func NewDynamoDBRepository(tableName string, client DynamoDBAPI) *DynamoDBReposi
 
 func (r *DynamoDBRepository) CreateBuy(buy *domain.Buy) error {
 	totalAsString := fmt.Sprintf("%.2f", buy.Price)
-	points := fmt.Sprintf("%v", buy.Price)
+	points := fmt.Sprintf("%v", buy.Points)
 
 	input := &dynamodb.PutItemInput{
 		TableName: aws.String(r.TableName),
